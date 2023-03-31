@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity implements ClickableActivity{
 
-    int Pvsum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

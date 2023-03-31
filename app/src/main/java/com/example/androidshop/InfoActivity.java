@@ -23,11 +23,6 @@ public class InfoActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView3);
         TextView textView2 = findViewById(R.id.textView4);
         Product product = (Product) intent.getSerializableExtra("productInfo");
-        textView2.setText(product.getName());
-        textView.setText(product.getPrix());
-        imageViewProduct.setImageResource(product.getImageResourceId());
-
-
 
 
 

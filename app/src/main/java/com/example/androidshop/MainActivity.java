@@ -9,26 +9,24 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_accueil);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main_accueil);
 
-
-        EditText nameView = findViewById(R.id.name);
-        Button start = findViewById(R.id.start);
-        start.setOnClickListener(v -> {
-            if (nameView.getText().toString().isEmpty()) {
-                nameView.setError("Name must not be empty");
-                return;
-            }
+            EditText nameView = findViewById(R.id.name);
+            Button start = findViewById(R.id.start);
+            start.setOnClickListener(v -> {
+                if (nameView.getText().toString().isEmpty()) {
+                    nameView.setError("Name must not be empty");
+                    return;
+                    }
+            });
+            //set intent
             String name = nameView.getText().toString();
             Intent intent = new Intent(this, ShopActivity.class);
             intent.putExtra("name", name);
             startActivity(intent);
-        });
 
-
-
-    }
+        }
 }
