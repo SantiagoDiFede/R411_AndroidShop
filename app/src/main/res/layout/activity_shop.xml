@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1E5D2"
+    tools:context="com.example.androidshop.ShopActivity">
+
+
+    <ImageView
+        android:id="@+id/profPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/profOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500 points de vie max"
+        android:textColor="#FF9E9E"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/profPicture"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faites votre choix"
+        android:textSize="24sp"
+        android:paddingHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/profOrder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/pointsOfLife"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="14dp"
+        android:paddingHorizontal="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="@id/label"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="J'adopte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:choiceMode="multipleChoice"
+        android:background="#F8F2BB"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
