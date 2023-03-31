@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Bille</string>
+    <string name="edit">YES</string>
+    <string name="ok">NO</string>
+    <string name="pizzaConf">a</string>
+    <string name="VAR_KEY1" />
+</resources>
