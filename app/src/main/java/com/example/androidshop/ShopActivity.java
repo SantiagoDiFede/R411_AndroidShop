@@ -39,7 +39,9 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
 
     @Override
     public void onClickProduct(Product product) {
-
+        Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtra("productInfo", product);
+        startActivity(intent);
     }
 
     @Override
