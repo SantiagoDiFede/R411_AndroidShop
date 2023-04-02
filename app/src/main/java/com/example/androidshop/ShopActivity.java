@@ -24,12 +24,22 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
 
         TextView label = findViewById(R.id.label);
         ProductList productList = new ProductList();
-        label.setText("Faites votre choix "+name+" !");
+        ArrayList<Product> products;
+        label.setText("Bienvenu sur TrouveTaBille " + name + " !");
         ProductAdapter adapter = new ProductAdapter(productList, this);
         ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.button);
         button.setEnabled(false);
+        //make an event listener for the elements
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            button.setEnabled(true);
+            button.setOnClickListener(v -> {
+                Intent intent1 = new Intent(this, InfoActivity.class);
+                intent1.putExtra("productInfo", productList.get(position));
+                startActivity(intent1);
+            });
+        });
 
 
 

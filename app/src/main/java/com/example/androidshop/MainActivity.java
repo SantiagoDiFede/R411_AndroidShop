@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
                     nameView.setError("Name must not be empty");
                     return;
                     }
+                String name = nameView.getText().toString();
+                Intent intent = new Intent(this, ShopActivity.class);
+                intent.putExtra("name", name);
+                startActivity(intent);
             });
-            //set intent
-            String name = nameView.getText().toString();
-            Intent intent = new Intent(this, ShopActivity.class);
-            intent.putExtra("name", name);
-            startActivity(intent);
+
 
         }
 }

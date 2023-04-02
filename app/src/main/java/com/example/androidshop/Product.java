@@ -3,23 +3,45 @@ package com.example.androidshop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
-
 public class Product implements Parcelable {
-    private String name;
-    private double pu;
-    private int image;
+       /* "_id": "1",
+            "nom": "lune",
+            "Color": "gris,bleu foncé",
+            "Taille": 1.31,
+            "categorie": "bille",
+            "prix": 14.91,
+            "picture": "bille1",
+            "about": "Consectetur sint labore est Lorem velit aliquip Lorem. Ut aliqua laboris culpa minim reprehenderit non anim occaecat. Consequat aliqua laboris duis nostrud esse amet dolore proident deserunt cupidatat.\r\n"
+    */
+    private int id;
+    private String nom;
+    private String color;
+    private double taille;
+    private String categorie;
+    private double prix;
+    private String picture;
+    private String about;
 
-    public Product(String name, double price, int image) {
-        this.name = name;
-        this.pu = price;
-        this.image = image;
+
+    public Product(int id, String nom, String color, double taille, String categorie, double prix, String picture, String about) {
+        this.id = id;
+        this.nom = nom;
+        this.color = color;
+        this.taille = taille;
+        this.categorie = categorie;
+        this.prix = prix;
+        this.picture = picture;
+        this.about = about;
     }
-
     protected Product(Parcel in) {
-        name = in.readString();
-        pu = in.readDouble();
-        image = in.readInt();
+        id = in.readInt();
+        nom = in.readString();
+        color = in.readString();
+        taille = in.readDouble();
+        categorie = in.readString();
+        prix = in.readDouble();
+        picture = in.readString();
+        about = in.readString();
     }
 
     public static final Creator<Product> CREATOR = new Creator<Product>() {
@@ -34,28 +56,68 @@ public class Product implements Parcelable {
         }
     };
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public double getPrice() {
-        return pu;
+    public String getNom() {
+        return nom;
     }
 
-    public void setPrice(double price) {
-        this.pu = price;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public int getImageResource() {
-        return image;
+    public String getColor() {
+        return color;
     }
 
-    public void setImageResource(int imageResource) {
-        this.image = imageResource;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     @Override
@@ -65,8 +127,13 @@ public class Product implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeDouble(pu);
-        dest.writeInt(image);
+        dest.writeInt(id);
+        dest.writeString(nom);
+        dest.writeString(color);
+        dest.writeDouble(taille);
+        dest.writeString(categorie);
+        dest.writeDouble(prix);
+        dest.writeString(picture);
+        dest.writeString(about);
     }
 }

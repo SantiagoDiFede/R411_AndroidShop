@@ -7,28 +7,71 @@ package com.example.androidshop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONObject;
+
+import java.io.Console;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductList extends ArrayList<Product> implements Parcelable {
 
-
     public ProductList() {
-        // Ajoutez ici les produits à la liste
-        this.add(new Product("Bille 1", 1.0, R.drawable.logo));
-        this.add(new Product("Bille 2", 2.0, R.drawable.logo));
-        this.add(new Product("Bille 3", 3.0, R.drawable.logo));
-        this.add(new Product("Bille 4", 0.5, R.drawable.logo));
+        super();
     }
 
-    protected ProductList(Parcel in) {
+
+    //turn a json file into a string
+    public static String loadJSONFromAsset(InputStream is) {
+        String json = null;
+        try {
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+    public ProductList(String json) {
+        super();
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Product>>(){}.getType();
+        List<Product> products = gson.fromJson(json, listType);
+        this.addAll(products);
+        //show the list of products in the console
+        for (Product product : this) {
+            System.out.println(product);
+        }
+    }
+
+
+
+
+    protected ProductList(Parcel in) throws UnsupportedEncodingException, IOException {
         in.createTypedArrayList(Product.CREATOR);
     }
 
     public static final Creator<ProductList> CREATOR = new Creator<ProductList>() {
         @Override
         public ProductList createFromParcel(Parcel in) {
-            return new ProductList(in);
+            try {
+                return new ProductList(in);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         @Override
@@ -52,7 +95,7 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
     public double getTotalPrice() {
         double totalPrice = 0;
         for (Product product : this) {
-            totalPrice += product.getPrice();
+            totalPrice += product.getPrix();
         }
         return totalPrice;
     }
