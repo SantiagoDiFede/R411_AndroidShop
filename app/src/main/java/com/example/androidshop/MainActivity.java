@@ -20,13 +20,21 @@ public class MainActivity extends AppCompatActivity {
                 if (mailView.getText().toString().isEmpty()) {
                     mailView.setError("Mail must not be empty");
                     return;
-                    }
+                }
                 String mail = mailView.getText().toString();
+                if (!isValidEmail(mailView.getText().toString())) {
+                    mailView.setError("Mail must be to format : *@*.*");
+                    return;
+                }
                 Intent intent = new Intent(this, ShopActivity.class);
                 intent.putExtra("mail", mail);
                 startActivity(intent);
             });
 
-
         }
+
+    public static boolean isValidEmail(String email) {
+        String regex = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
+        return email.matches(regex);
+    }
 }
