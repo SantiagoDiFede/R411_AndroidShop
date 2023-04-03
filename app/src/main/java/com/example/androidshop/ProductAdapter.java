@@ -40,7 +40,7 @@ public class ProductAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = view;
         if (v == null) {
-            v = layoutInflater.inflate(R.layout.activity_shop, null);
+            v = layoutInflater.inflate(R.layout.bille_layout, null);
         }
         /*Product product = productList.get(i);
         ImageView imageView = v.findViewById(R.id.imageView3);
