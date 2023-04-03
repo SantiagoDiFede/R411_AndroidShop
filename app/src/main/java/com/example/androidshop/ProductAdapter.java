@@ -42,15 +42,17 @@ public class ProductAdapter extends BaseAdapter {
         if (v == null) {
             v = layoutInflater.inflate(R.layout.activity_shop, null);
         }
-        /*Product product = productList.get(i);
-        ImageView imageView = v.findViewById(R.id.imageView3);
+        Product product = productList.get(i);
+        ImageView imageView = v.findViewById(R.id.bilPicture);
         imageView.setImageResource(product.getPicture());
-        TextView textView = v.findViewById(R.id.textView);
-        textView.setText(product.getName());
-        TextView textView2 = v.findViewById(R.id.textView2);
-        textView2.setText(product.getPrice() + "€");
+        TextView textView = v.findViewById(R.id.bilName);
+        textView.setText(product.getNom());
+        TextView textView2 = v.findViewById(R.id.bilCategorie);
+        textView2.setText(product.getCategorie());
+        TextView textView3 = v.findViewById(R.id.bilPrix);
+        textView3.setText(product.getPrix() + "€");
         v.setOnClickListener(v1 -> clickableActivity.onClickProduct(product));
-        return v;*/
+        return v;
         return null;
     }
 
