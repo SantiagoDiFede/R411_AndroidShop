@@ -20,13 +20,17 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+        System.out.println("ShopActivity");
 
         Intent intent = getIntent();
         String mail = intent.getStringExtra("mail");
+        if (intent.hasExtra("shopCart")){
+            shopCart = intent.getParcelableArrayListExtra("shopCart");
+        }
 
         TextView label = findViewById(R.id.label);
         ProductList productList = new ProductList();
-        label.setText("Bienvenue " + mail + " !");
+        label.setText("Bienvenue!");
         ProductAdapter adapter = new ProductAdapter(productList, this);
         ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);
@@ -49,6 +53,7 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
     public void onClickProduct(Product product) {
         Intent intent = new Intent(this, InfoActivity.class);
         intent.putExtra("productInfo", product);
+        intent.putExtra("shopCart", shopCart);
         startActivity(intent);
     }
 

@@ -4,8 +4,9 @@ package com.example.androidshop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken;
+
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 //import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

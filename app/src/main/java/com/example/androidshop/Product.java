@@ -22,8 +22,18 @@ public class Product implements Parcelable {
     private int picture;
     private String about;
 
+    public int getStock() {
+        return stock;
+    }
 
-    public Product(int id, String nom, String color, double taille, String categorie, double prix, int picture, String about) {
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    private int stock;
+
+
+    public Product(int id, String nom, String color, double taille, String categorie, double prix, int picture, String about,int stock) {
         this.id = id;
         this.nom = nom;
         this.color = color;
@@ -32,6 +42,8 @@ public class Product implements Parcelable {
         this.prix = prix;
         this.picture = picture;
         this.about = about;
+        this.stock = stock;
+
     }
     protected Product(Parcel in) {
         id = in.readInt();
@@ -42,6 +54,7 @@ public class Product implements Parcelable {
         prix = in.readDouble();
         picture = in.readInt();
         about = in.readString();
+        stock = in.readInt();
     }
 
     public static final Creator<Product> CREATOR = new Creator<Product>() {
@@ -135,5 +148,6 @@ public class Product implements Parcelable {
         dest.writeDouble(prix);
         dest.writeInt(picture);
         dest.writeString(about);
+        dest.writeInt(stock);
     }
 }

@@ -42,16 +42,20 @@ public class ProductAdapter extends BaseAdapter {
         if (v == null) {
             v = layoutInflater.inflate(R.layout.bille_layout, null);
         }
-        /*Product product = productList.get(i);
-        ImageView imageView = v.findViewById(R.id.imageView3);
+        Product product = productList.get(i);
+        ImageView imageView = v.findViewById(R.id.image);
         imageView.setImageResource(product.getPicture());
-        TextView textView = v.findViewById(R.id.textView);
-        textView.setText(product.getName());
-        TextView textView2 = v.findViewById(R.id.textView2);
-        textView2.setText(product.getPrice() + "€");
-        v.setOnClickListener(v1 -> clickableActivity.onClickProduct(product));
-        return v;*/
-        return null;
+        TextView textView = v.findViewById(R.id.nom);
+        textView.setText(product.getNom());
+        TextView textView2 = v.findViewById(R.id.prix);
+        textView2.setText(product.getPrix() + "€");
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickableActivity.onClickProduct(product);
+            }
+        });
+        return v;
     }
 
 

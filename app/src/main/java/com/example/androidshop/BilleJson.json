@@ -7,7 +7,8 @@
             "categorie": "bille",
             "prix": 14.91,
             "picture": "bille1",
-            "about": "Consectetur sint labore est Lorem velit aliquip Lorem. Ut aliqua laboris culpa minim reprehenderit non anim occaecat. Consequat aliqua laboris duis nostrud esse amet dolore proident deserunt cupidatat.\r\n"
+            "about": "Consectetur sint labore est Lorem velit aliquip Lorem. Ut aliqua laboris culpa minim reprehenderit non anim occaecat. Consequat aliqua laboris duis nostrud esse amet dolore proident deserunt cupidatat.\r\n",
+            "stock": 10
     },
     {
     "_id": "2",
@@ -17,7 +18,8 @@
             "categorie": "calot",
             "prix": 3.2,
             "picture": "bille2",
-            "about": "Eu anim enim minim aliqua incididunt ullamco. Cupidatat pariatur irure reprehenderit sint nisi velit in proident nisi non ipsum excepteur dolor veniam. Esse culpa officia duis nulla cillum. Id occaecat in veniam veniam qui in duis ullamco sit ut commodo magna. Reprehenderit ea in fugiat dolor id est eu labore commodo qui magna consectetur officia commodo. Minim non esse adipisicing anim eiusmod nostrud proident magna cupidatat. Ipsum aute proident elit anim elit ex ut laboris.\r\n"
+            "about": "Eu anim enim minim aliqua incididunt ullamco. Cupidatat pariatur irure reprehenderit sint nisi velit in proident nisi non ipsum excepteur dolor veniam. Esse culpa officia duis nulla cillum. Id occaecat in veniam veniam qui in duis ullamco sit ut commodo magna. Reprehenderit ea in fugiat dolor id est eu labore commodo qui magna consectetur officia commodo. Minim non esse adipisicing anim eiusmod nostrud proident magna cupidatat. Ipsum aute proident elit anim elit ex ut laboris.\r\n",
+            "stock": 10
     },
     {
     "_id": "3",
@@ -27,7 +29,8 @@
             "categorie": "bille",
             "prix": 2.62,
             "picture": "bille3",
-            "about": "Ipsum ullamco magna sunt eiusmod ullamco quis occaecat velit mollit. Laboris ad cillum ipsum enim minim laboris aliquip aliquip. Ullamco voluptate est quis reprehenderit laboris sit irure. Eiusmod dolore aliqua occaecat qui. Enim ea nisi non occaecat officia fugiat ea laborum anim nisi id aliquip labore. Nulla sit consequat eiusmod excepteur tempor non dolore pariatur officia adipisicing adipisicing aliqua. Incididunt pariatur eu voluptate cillum nulla eu Lorem est consectetur excepteur.\r\n"
+            "about": "Ipsum ullamco magna sunt eiusmod ullamco quis occaecat velit mollit. Laboris ad cillum ipsum enim minim laboris aliquip aliquip. Ullamco voluptate est quis reprehenderit laboris sit irure. Eiusmod dolore aliqua occaecat qui. Enim ea nisi non occaecat officia fugiat ea laborum anim nisi id aliquip labore. Nulla sit consequat eiusmod excepteur tempor non dolore pariatur officia adipisicing adipisicing aliqua. Incididunt pariatur eu voluptate cillum nulla eu Lorem est consectetur excepteur.\r\n",
+            "stock": 10
     },
     {
     "_id": "4",
@@ -37,7 +40,8 @@
             "categorie": "mini-bille",
             "prix": 12.02,
             "picture": "bille4",
-            "about": "Incididunt qui mollit id occaecat mollit anim ut officia. Commodo elit voluptate officia Lorem aute consequat magna qui ut. Amet Lorem sit sint officia eiusmod sunt et et sunt labore duis nostrud ex esse. Deserunt duis commodo cupidatat et proident est excepteur occaecat. Consectetur amet veniam cupidatat eu proident amet officia reprehenderit laborum dolor sunt commodo aute. Ullamco cillum proident tempor eiusmod non non. Cillum tempor ad pariatur incididunt eu nostrud id amet.\r\n"
+            "about": "Incididunt qui mollit id occaecat mollit anim ut officia. Commodo elit voluptate officia Lorem aute consequat magna qui ut. Amet Lorem sit sint officia eiusmod sunt et et sunt labore duis nostrud ex esse. Deserunt duis commodo cupidatat et proident est excepteur occaecat. Consectetur amet veniam cupidatat eu proident amet officia reprehenderit laborum dolor sunt commodo aute. Ullamco cillum proident tempor eiusmod non non. Cillum tempor ad pariatur incididunt eu nostrud id amet.\r\n",
+            "stock": 10
     },
     {
     "_id": "5",
@@ -47,7 +51,8 @@
             "categorie": "mammouth",
             "prix": 9.87,
             "picture": "bille5",
-            "about": "Ea eu enim labore eiusmod commodo ex reprehenderit esse. Tempor velit cupidatat cupidatat proident commodo aute Lorem proident ullamco sunt. Qui cillum eiusmod et mollit laborum commodo ut irure.\r\n"
+            "about": "Ea eu enim labore eiusmod commodo ex reprehenderit esse. Tempor velit cupidatat cupidatat proident commodo aute Lorem proident ullamco sunt. Qui cillum eiusmod et mollit laborum commodo ut irure.\r\n",
+            "stock": 10
     },
     {
     "_id": "6",
@@ -57,7 +62,8 @@
             "categorie": "calot",
             "prix": 11.62,
             "picture": "bille6",
-            "about": "Do eiusmod ullamco non do consequat proident dolor in minim excepteur aliqua adipisicing. Incididunt deserunt velit consectetur ad est velit commodo minim in officia. Ad minim mollit eu minim commodo minim tempor eiusmod cillum. Nostrud irure irure aliquip commodo. Velit et fugiat enim nisi proident est occaecat irure adipisicing nulla nulla. Elit occaecat anim amet eiusmod voluptate sit duis culpa commodo adipisicing proident pariatur.\r\n"
+            "about": "Do eiusmod ullamco non do consequat proident dolor in minim excepteur aliqua adipisicing. Incididunt deserunt velit consectetur ad est velit commodo minim in officia. Ad minim mollit eu minim commodo minim tempor eiusmod cillum. Nostrud irure irure aliquip commodo. Velit et fugiat enim nisi proident est occaecat irure adipisicing nulla nulla. Elit occaecat anim amet eiusmod voluptate sit duis culpa commodo adipisicing proident pariatur.\r\n",
+            "stock": 10
     },
     {
     "_id": "7",
@@ -67,7 +73,8 @@
             "categorie": "mammouth",
             "prix": 11.37,
             "picture": "bille7",
-            "about": "Eu laborum voluptate aliqua aute ex magna mollit culpa eiusmod excepteur id voluptate ut ut. Mollit do sit adipisicing nisi veniam esse sunt. Consectetur pariatur nulla in ad aliqua dolore. Magna occaecat veniam sint est esse aute ea ut. Ullamco consectetur officia quis incididunt do reprehenderit deserunt mollit id voluptate exercitation exercitation irure irure. Non sint esse pariatur aliqua minim fugiat.\r\n"
+            "about": "Eu laborum voluptate aliqua aute ex magna mollit culpa eiusmod excepteur id voluptate ut ut. Mollit do sit adipisicing nisi veniam esse sunt. Consectetur pariatur nulla in ad aliqua dolore. Magna occaecat veniam sint est esse aute ea ut. Ullamco consectetur officia quis incididunt do reprehenderit deserunt mollit id voluptate exercitation exercitation irure irure. Non sint esse pariatur aliqua minim fugiat.\r\n",
+            "stock": 10
     },
     {
     "_id": "8",
@@ -77,7 +84,8 @@
             "categorie": "boulet",
             "prix": 4.71,
             "picture": "bille8",
-            "about": "Nostrud officia est esse veniam enim dolor in sint. Nostrud voluptate consequat culpa nulla labore do amet nulla mollit fugiat. Velit aliquip amet consequat laborum cupidatat consectetur incididunt deserunt proident elit eiusmod. Magna irure culpa non eiusmod do et. Fugiat consequat voluptate laborum quis. Qui sint sunt esse est magna labore mollit. Proident reprehenderit labore nulla aliqua commodo consectetur anim elit ex quis sit commodo.\r\n"
+            "about": "Nostrud officia est esse veniam enim dolor in sint. Nostrud voluptate consequat culpa nulla labore do amet nulla mollit fugiat. Velit aliquip amet consequat laborum cupidatat consectetur incididunt deserunt proident elit eiusmod. Magna irure culpa non eiusmod do et. Fugiat consequat voluptate laborum quis. Qui sint sunt esse est magna labore mollit. Proident reprehenderit labore nulla aliqua commodo consectetur anim elit ex quis sit commodo.\r\n",
+            "stock": 10
     },
     {
     "_id": "9",
@@ -87,7 +95,8 @@
             "categorie": "boulet",
             "prix": 8.84,
             "picture": "bille9",
-            "about": "Eu veniam aliquip irure voluptate consequat. Cillum non laborum consectetur ut veniam elit qui culpa in culpa consequat nisi. Mollit occaecat laboris minim occaecat exercitation ullamco velit occaecat reprehenderit sint aliquip nostrud dolor. Velit duis minim cupidatat ex reprehenderit ipsum dolore Lorem incididunt qui deserunt officia. Pariatur aliqua adipisicing id cillum aute. Id Lorem Lorem anim id.\r\n"
+            "about": "Eu veniam aliquip irure voluptate consequat. Cillum non laborum consectetur ut veniam elit qui culpa in culpa consequat nisi. Mollit occaecat laboris minim occaecat exercitation ullamco velit occaecat reprehenderit sint aliquip nostrud dolor. Velit duis minim cupidatat ex reprehenderit ipsum dolore Lorem incididunt qui deserunt officia. Pariatur aliqua adipisicing id cillum aute. Id Lorem Lorem anim id.\r\n",
+            "stock": 10
     },
     {
     "_id": "10",
@@ -97,7 +106,8 @@
             "categorie": "mini-bille",
             "prix": 4.45,
             "picture": "bille10",
-            "about": "Labore duis minim exercitation duis esse adipisicing do tempor occaecat est. Irure ad non dolor consequat sit nulla est officia eiusmod. Nulla veniam dolore esse incididunt. Sint aliqua deserunt dolor consectetur sint.\r\n"
+            "about": "Labore duis minim exercitation duis esse adipisicing do tempor occaecat est. Irure ad non dolor consequat sit nulla est officia eiusmod. Nulla veniam dolore esse incididunt. Sint aliqua deserunt dolor consectetur sint.\r\n",
+            "stock": 10
     }
 ]
 
