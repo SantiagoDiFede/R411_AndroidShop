@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/profPicture"
+        android:id="@+id/billesPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,13 +19,13 @@
 
 
     <TextView
-        android:id="@+id/profOrder"
+        android:id="@+id/billesOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="500 points de vie max"
+        android:text="TrouveTaBille"
         android:textColor="#FF9E9E"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/profPicture"
+        app:layout_constraintTop_toBottomOf="@id/billesPicture"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
@@ -37,15 +37,15 @@
         android:textSize="24sp"
         android:paddingHorizontal="5dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/profOrder"
+        app:layout_constraintTop_toBottomOf="@id/billesOrder"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
-        android:id="@+id/pointsOfLife"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Prix : 0€"
         android:textSize="14dp"
         android:paddingHorizontal="5dp"
         android:layout_marginTop="5dp"
@@ -56,7 +56,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="J'adopte"
+        android:text="J'achète"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:choiceMode="multipleChoice"
+        android:choiceMode="singleChoice"
         android:background="#F8F2BB"
         app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintBottom_toTopOf="@id/button"

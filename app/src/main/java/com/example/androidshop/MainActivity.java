@@ -14,16 +14,16 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_accueil);
 
-            EditText nameView = findViewById(R.id.name);
+            EditText mailView = findViewById(R.id.mail);
             Button start = findViewById(R.id.start);
             start.setOnClickListener(v -> {
-                if (nameView.getText().toString().isEmpty()) {
-                    nameView.setError("Name must not be empty");
+                if (mailView.getText().toString().isEmpty()) {
+                    mailView.setError("Mail must not be empty");
                     return;
                     }
-                String name = nameView.getText().toString();
+                String mail = mailView.getText().toString();
                 Intent intent = new Intent(this, ShopActivity.class);
-                intent.putExtra("name", name);
+                intent.putExtra("mail", mail);
                 startActivity(intent);
             });
 

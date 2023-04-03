@@ -22,12 +22,11 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         setContentView(R.layout.activity_shop);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        String mail = intent.getStringExtra("mail");
 
         TextView label = findViewById(R.id.label);
         ProductList productList = new ProductList();
-        ArrayList<Product> products;
-        label.setText("Bienvenu sur TrouveTaBille " + name + " !");
+        label.setText("Bienvenu " + mail + " !");
         ProductAdapter adapter = new ProductAdapter(productList, this);
         ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);

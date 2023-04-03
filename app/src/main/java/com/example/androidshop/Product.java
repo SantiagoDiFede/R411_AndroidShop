@@ -19,11 +19,11 @@ public class Product implements Parcelable {
     private double taille;
     private String categorie;
     private double prix;
-    private String picture;
+    private int picture;
     private String about;
 
 
-    public Product(int id, String nom, String color, double taille, String categorie, double prix, String picture, String about) {
+    public Product(int id, String nom, String color, double taille, String categorie, double prix, int picture, String about) {
         this.id = id;
         this.nom = nom;
         this.color = color;
@@ -40,7 +40,7 @@ public class Product implements Parcelable {
         taille = in.readDouble();
         categorie = in.readString();
         prix = in.readDouble();
-        picture = in.readString();
+        picture = in.readInt();
         about = in.readString();
     }
 
@@ -104,11 +104,11 @@ public class Product implements Parcelable {
         this.prix = prix;
     }
 
-    public String getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 
@@ -133,7 +133,7 @@ public class Product implements Parcelable {
         dest.writeDouble(taille);
         dest.writeString(categorie);
         dest.writeDouble(prix);
-        dest.writeString(picture);
+        dest.writeInt(picture);
         dest.writeString(about);
     }
 }
