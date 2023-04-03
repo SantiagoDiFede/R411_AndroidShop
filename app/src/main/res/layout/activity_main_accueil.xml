@@ -23,11 +23,14 @@
         android:layout_marginTop="64dp"
         android:padding="16dp"/>
 
+
     <EditText
         android:id="@+id/mail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Entrez votre mail"
+        android:singleLine="true"
+        android:inputType="text"
         android:background="#FFFFFF"
         android:textColorHint="#005BEA"
         android:paddingStart="16dp"
