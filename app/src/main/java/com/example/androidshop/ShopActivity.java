@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity implements ClickableActivity{
 
+    ArrayList<Product> shopCart = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
 
     @Override
     public void onClickProduct(Product product) {
+        //go to the info activity containing the product
         Intent intent = new Intent(this, InfoActivity.class);
         intent.putExtra("productInfo", product);
         startActivity(intent);
