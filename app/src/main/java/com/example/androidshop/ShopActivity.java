@@ -33,14 +33,11 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.button);
         button.setEnabled(false);
-        //make an event listener for the elements
-        listView.setOnItemClickListener((parent, view, position, id) -> {
-            button.setEnabled(true);
-            button.setOnClickListener(v -> {
-                Intent intent1 = new Intent(this, InfoActivity.class);
-                intent1.putExtra("productInfo", productList.get(position));
-                startActivity(intent1);
-            });
+        button.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, CartActivity.class);
+            ArrayList<Integer> productsId = ProductList.getProductsId(shopCart);
+            intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
+            startActivity(intent1);
         });
 
 
@@ -51,7 +48,6 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
 
     @Override
     public void onClickProduct(Product product) {
-        //go to the info activity containing the product
         Intent intent = new Intent(this, InfoActivity.class);
         intent.putExtra("productInfo", product);
         startActivity(intent);

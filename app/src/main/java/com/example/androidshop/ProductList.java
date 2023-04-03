@@ -48,13 +48,10 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
     public ProductList(String json) {
         super();
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Product>>(){}.getType();
+        Type listType = new TypeToken<List<Product>>() {
+        }.getType();
         List<Product> products = gson.fromJson(json, listType);
         this.addAll(products);
-        //show the list of products in the console
-        for (Product product : this) {
-            System.out.println(product);
-        }
     }
 
 
@@ -79,6 +76,14 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
             return new ProductList[size];
         }
     };
+
+    public static ArrayList<Integer> getProductsId(ArrayList<Product> shopCart) {
+        ArrayList<Integer> productsId = new ArrayList<>();
+        for (Product product : shopCart) {
+            productsId.add(product.getId());
+        }
+        return productsId;
+    }
 
     public List<Product> getProductList() {
         return this;
