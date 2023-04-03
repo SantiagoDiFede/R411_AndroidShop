@@ -44,7 +44,10 @@ public class ProductAdapter extends BaseAdapter {
         }
         Product product = productList.get(i);
         ImageView imageView = v.findViewById(R.id.image);
-        imageView.setImageResource(product.getPicture());
+        //set image as "bille" + product.getPicture()
+        String imageName = "bille" + product.getPicture();
+        int resID = v.getResources().getIdentifier(imageName, "drawable", v.getContext().getPackageName());
+        imageView.setImageResource(resID);
         TextView textView = v.findViewById(R.id.nom);
         textView.setText(product.getNom());
         TextView textView2 = v.findViewById(R.id.prix);

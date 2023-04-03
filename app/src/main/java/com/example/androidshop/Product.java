@@ -3,16 +3,13 @@ package com.example.androidshop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Product implements Parcelable {
-       /* "_id": "1",
-            "nom": "lune",
-            "Color": "gris,bleu foncé",
-            "Taille": 1.31,
-            "categorie": "bille",
-            "prix": 14.91,
-            "picture": "bille1",
-            "about": "Consectetur sint labore est Lorem velit aliquip Lorem. Ut aliqua laboris culpa minim reprehenderit non anim occaecat. Consequat aliqua laboris duis nostrud esse amet dolore proident deserunt cupidatat.\r\n"
-    */
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.Serializable;
+
+public class Product implements Parcelable, Serializable {
+
     private int id;
     private String nom;
     private String color;
@@ -33,7 +30,17 @@ public class Product implements Parcelable {
     private int stock;
 
 
-    public Product(int id, String nom, String color, double taille, String categorie, double prix, int picture, String about,int stock) {
+
+    @JsonCreator
+    public Product(@JsonProperty("id") int id,
+                   @JsonProperty("nom") String nom,
+                   @JsonProperty("color") String color,
+                   @JsonProperty("taille") double taille,
+                   @JsonProperty("categorie") String categorie,
+                   @JsonProperty("prix") double prix,
+                   @JsonProperty("picture") int picture,
+                   @JsonProperty("about") String about,
+                   @JsonProperty("stock") int stock) {
         this.id = id;
         this.nom = nom;
         this.color = color;
@@ -43,8 +50,14 @@ public class Product implements Parcelable {
         this.picture = picture;
         this.about = about;
         this.stock = stock;
-
     }
+
+
+
+
+
+
+
     protected Product(Parcel in) {
         id = in.readInt();
         nom = in.readString();

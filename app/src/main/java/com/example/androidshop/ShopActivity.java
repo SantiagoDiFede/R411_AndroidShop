@@ -3,12 +3,14 @@ package com.example.androidshop;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity implements ClickableActivity{
@@ -29,7 +31,12 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         }
 
         TextView label = findViewById(R.id.label);
-        ProductList productList = new ProductList();
+        ProductList productList = null;
+        try {
+            productList = new ProductList();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         label.setText("Bienvenue!");
         ProductAdapter adapter = new ProductAdapter(productList, this);
         ListView listView = findViewById(R.id.listview);
@@ -52,7 +59,7 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
     @Override
     public void onClickProduct(Product product) {
         Intent intent = new Intent(this, InfoActivity.class);
-        intent.putExtra("productInfo", product);
+        intent.putExtra("productInfo", (Parcelable) product);
         intent.putExtra("shopCart", shopCart);
         startActivity(intent);
     }

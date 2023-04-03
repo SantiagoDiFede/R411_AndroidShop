@@ -1,10 +1,13 @@
 package com.example.androidshop;
 
 
+import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.StrictMode;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 //import com.google.gson.reflect.TypeToken;
@@ -13,39 +16,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductList extends ArrayList<Product> implements Parcelable {
 
-    public ProductList() {
-        super();
-    }
 
 
-    //turn a json file into a string
-    public static String loadJSONFromAsset(InputStream is) {
-        String json = null;
-        try {
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
+
+
+    public ProductList() throws IOException {
+        StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(gfgPolicy);
+        URL url = new URL("https://api.jsonserve.com/wns4ld");
+        InputStream input = url.openStream();
+        ObjectMapper mapper = new ObjectMapper();
+        Product product[] = mapper.readValue(input, Product[].class);
+        for (Product p : product) {
+            this.add(p);
         }
-        return json;
-    }
 
-    public ProductList(String json) {
-        super();
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<Product>>() {
-        }.getType();
-        List<Product> products = gson.fromJson(json, listType);
-        this.addAll(products);
     }
 
 

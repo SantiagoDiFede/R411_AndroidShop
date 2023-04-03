@@ -2,6 +2,7 @@ package com.example.androidshop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -25,7 +26,9 @@ public class InfoActivity extends AppCompatActivity {
         ArrayList<Product> shopCart = (ArrayList<Product>) intent.getSerializableExtra("shopCart");
         ImageView imageView = findViewById(R.id.image);
         int image = product.getPicture();
-        imageView.setImageResource(image);
+        String imageString = "bille" + image;
+        int imageId = getResources().getIdentifier(imageString, "drawable", getPackageName());
+        imageView.setImageResource(imageId);
         TextView name = findViewById(R.id.textNom);
         name.setText(product.getNom());
         TextView price = findViewById(R.id.textPrix);
@@ -43,7 +46,7 @@ public class InfoActivity extends AppCompatActivity {
         Button button = findViewById(R.id.buyButton);
         button.setOnClickListener(v -> {
             Intent intent1 = new Intent(this, ShopActivity.class);
-            intent1.putExtra("productBought", product);
+            intent1.putExtra("productBought", (Parcelable) product);
             shopCart.add(product);
             intent1.putExtra("shopCart", shopCart);
             startActivity(intent1);
