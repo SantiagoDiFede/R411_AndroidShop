@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F1E5D2"
-    tools:context="com.example.androidshop.ShopActivity">
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#F7F7F7"
+tools:context="com.example.androidshop.ShopActivity">
 
 
     <ImageView
         android:id="@+id/billesPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/fondbille"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"/>
-
 
     <TextView
         android:id="@+id/billesOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TrouveTaBille"
-        android:textColor="#FF9E9E"
-        android:textSize="20dp"
+        android:textColor="#005BEA"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/billesPicture"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -35,8 +35,9 @@
         android:layout_height="wrap_content"
         android:text="Faites votre choix"
         android:textSize="24sp"
-        android:paddingHorizontal="5dp"
-        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/billesOrder"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -45,30 +46,39 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp"
         android:text="Prix : 0€"
-        android:textSize="14dp"
-        android:paddingHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintTop_toTopOf="@id/label"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/listview"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/label"
+        app:layout_constraintTop_toBottomOf="@id/billesOrder" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="J'achète"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#005BEA"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="16dp"/>
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:choiceMode="singleChoice"
-        android:background="#F8F2BB"
+        android:background="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintRight_toRightOf="parent"

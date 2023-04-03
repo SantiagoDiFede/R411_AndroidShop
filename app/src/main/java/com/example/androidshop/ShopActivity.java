@@ -26,7 +26,7 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
 
         TextView label = findViewById(R.id.label);
         ProductList productList = new ProductList();
-        label.setText("Bienvenu " + mail + " !");
+        label.setText("Bienvenue " + mail + " !");
         ProductAdapter adapter = new ProductAdapter(productList, this);
         ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);
