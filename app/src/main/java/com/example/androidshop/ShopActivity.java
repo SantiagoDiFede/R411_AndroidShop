@@ -62,6 +62,13 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
             intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
             startActivity(intent1);
         });
+        Button button1 = findViewById(R.id.button2);
+        button1.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, ShopActivity.class);
+            shopCart.clear();
+            intent1.putParcelableArrayListExtra("shopCart", shopCart);
+            startActivity(intent1);
+        });
 
 
 
