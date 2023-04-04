@@ -35,9 +35,9 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         productList.clear();
         productList.addAll(products1);
         ProductAdapter adapter = new ProductAdapter(productList, this);
-        ListView listView = findViewById(R.id.listview);
+        ListView listView = findViewById(R.id.products_list);
         listView.setAdapter(adapter);
-        Button button = findViewById(R.id.button);
+        Button button = findViewById(R.id.buy_button);
         button.setOnClickListener(v -> {
             //make the pop up window appear
             Intent intent1 = new Intent(this, PopUpActivity.class);
