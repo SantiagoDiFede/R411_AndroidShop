@@ -9,13 +9,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
-    private final String username;
-    private final String password;
+    private final String username="malrega60@gmail.com";
+    private final String password="qiqwvewdnyxbavoi";
     private final Properties props;
 
-    public EmailSender(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public EmailSender() {
 
         props = new Properties();
         props.put("mail.smtp.auth", "true");

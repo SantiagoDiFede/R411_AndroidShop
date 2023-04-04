@@ -104,9 +104,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/back"
-        tools:srcCompat="@drawable/back"
 
-        />
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </LinearLayout>

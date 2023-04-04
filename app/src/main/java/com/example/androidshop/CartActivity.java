@@ -40,15 +40,15 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.buy_button);
         button.setOnClickListener(v -> {
-            Intent intent1 = getIntent();
-            String mail = intent.getStringExtra("mailUser");
+            System.out.println(UserEmail.getInstance().getEmail());
             Intent intent2 = new Intent(this, PopUpActivity.class);
-            EmailSender sender = new EmailSender("your.TrouveTaBille@yahoo.com", "your.goated1234");
+            EmailSender emailSender = new EmailSender();
             try {
-                sender.sendEmail("malrega60@gmail.com", "Confirmation", "Votre commande a bien été confirmé.");
+                emailSender.sendEmail(UserEmail.getInstance().getEmail(),"Your order has been received","Your order has been received");
             } catch (MessagingException e) {
                 throw new RuntimeException(e);
             }
+
 
             startActivity(intent2);
         });

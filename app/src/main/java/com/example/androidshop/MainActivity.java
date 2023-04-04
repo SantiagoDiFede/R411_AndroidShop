@@ -27,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
                     mailView.setError("Mail must be to format : *@*.*");
                     return;
                 }
-                String mail = mailView.getText().toString();
+                UserEmail.getInstance().setEmail(mailView.getText().toString());
                 Intent intent = new Intent(this, ShopActivity.class);
-                intent.putExtra("mail", mail);
                 startActivity(intent);
             });
 

@@ -27,7 +27,6 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         System.out.println("ShopActivity");
 
         Intent intent = getIntent();
-        String mail = intent.getStringExtra("mail");
         if (intent.hasExtra("shopCart")){
             shopCart = intent.getParcelableArrayListExtra("shopCart");
         }
@@ -59,7 +58,6 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
             Intent intent1 = new Intent(this, CartActivity.class);
             ArrayList<Integer> productsId = ProductList.getProductsId(shopCart);
             intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
-            intent1.putExtra("mailUser", mail);
             startActivity(intent1);
         });
         Button button1 = findViewById(R.id.button2);
