@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Product;
 
 import android.os.Parcel;
 import android.os.Parcelable;

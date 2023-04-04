@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidshop.ClickableActivity;
+import com.example.androidshop.Product.Product;
+import com.example.androidshop.Product.ProductAdapter;
+import com.example.androidshop.Product.ProductList;
+import com.example.androidshop.R;
+
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class ShopActivity extends AppCompatActivity implements ClickableActivity{
+public class ShopActivity extends AppCompatActivity implements ClickableActivity {
 
     ArrayList<Product> shopCart = new ArrayList<>();
 
@@ -27,7 +33,6 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         System.out.println("ShopActivity");
 
         Intent intent = getIntent();
-        String mail = intent.getStringExtra("mail");
         if (intent.hasExtra("shopCart")){
             shopCart = intent.getParcelableArrayListExtra("shopCart");
         }
@@ -53,13 +58,19 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         button.setEnabled(true);
         button.setOnClickListener(v -> {
             if (shopCart.isEmpty()){
-                //send a message to the user to tell him that he has to choose at least one product
                 Toast.makeText(this, "You have to choose at least one product", Toast.LENGTH_SHORT).show();
                 return;
             }
             Intent intent1 = new Intent(this, CartActivity.class);
             ArrayList<Integer> productsId = ProductList.getProductsId(shopCart);
             intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
+            startActivity(intent1);
+        });
+        Button button1 = findViewById(R.id.button2);
+        button1.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, ShopActivity.class);
+            shopCart.clear();
+            intent1.putParcelableArrayListExtra("shopCart", shopCart);
             startActivity(intent1);
         });
 

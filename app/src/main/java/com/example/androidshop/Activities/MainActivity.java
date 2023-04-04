@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.androidshop.Email.UserEmail;
+import com.example.androidshop.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             EditText mailView = findViewById(R.id.mail);
             Button start = findViewById(R.id.start);
             start.setOnClickListener(v -> {
-               /* if (mailView.getText().toString().isEmpty()) {
+                if (mailView.getText().toString().isEmpty()) {
                     mailView.setError("Mail must not be empty");
                     return;
                 }
@@ -25,10 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 if (!isValidEmail(mailView.getText().toString())) {
                     mailView.setError("Mail must be to format : *@*.*");
                     return;
-                }*/
-                String mail = mailView.getText().toString();
+                }
+                UserEmail.getInstance().setEmail(mailView.getText().toString());
                 Intent intent = new Intent(this, ShopActivity.class);
-                intent.putExtra("mail", mail);
                 startActivity(intent);
             });
 

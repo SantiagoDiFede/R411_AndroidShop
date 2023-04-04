@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.androidshop.Email.UserEmail;
+import com.example.androidshop.R;
 
 public class PopUpActivity extends Activity {
 
@@ -22,27 +25,21 @@ public class PopUpActivity extends Activity {
         String mail = intent.getStringExtra("mail");
         // Get the popup layout
         TextView textView = findViewById(R.id.textView);
-        textView.setText("Merci de votre commande! le mail confirmation a été envoyé à " + mail);
+        textView.setText("Merci de votre commande! Le mail de confirmation a été envoyé à " + UserEmail.getInstance().getEmail() +". On espère vous revoir bientôt!");
 
         popupLayout = findViewById(R.id.popup_layout);
 
         // Start with the popup layout hidden
-        popupLayout.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Animate the popup window to appear in the center of the screen
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(
                 ObjectAnimator.ofFloat(popupLayout, View.SCALE_X, 0f, 1f),
                 ObjectAnimator.ofFloat(popupLayout, View.SCALE_Y, 0f, 1f),
                 ObjectAnimator.ofFloat(popupLayout, View.ALPHA, 0f, 1f)
         );
-        animatorSet.setDuration(500);
+        animatorSet.setDuration(800);
         animatorSet.setInterpolator(new AccelerateInterpolator());
         animatorSet.start();
     }
+
+
 }
