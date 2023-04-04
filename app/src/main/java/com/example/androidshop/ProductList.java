@@ -39,6 +39,14 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
 
     }
 
+    public static double prixTotal(ArrayList<Product> shopCart) {
+        double prixTotal = 0;
+        for (Product product : shopCart) {
+            prixTotal += product.getPrix();
+        }
+        return prixTotal;
+    }
+
 
 
 
@@ -68,6 +76,21 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
             productsId.add(product.getId());
         }
         return productsId;
+    }
+
+    public static Product getProduct(Integer id) {
+        Product product = null;
+        try {
+            ProductList productList = new ProductList();
+            for (Product p : productList) {
+                if (p.getId() == id) {
+                    product = p;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
     }
 
     public List<Product> getProductList() {

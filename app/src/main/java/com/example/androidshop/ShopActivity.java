@@ -7,10 +7,12 @@ import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity implements ClickableActivity{
@@ -29,6 +31,12 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         if (intent.hasExtra("shopCart")){
             shopCart = intent.getParcelableArrayListExtra("shopCart");
         }
+        double prixTotal = ProductList.prixTotal(shopCart);
+        TextView prixTotalView = findViewById(R.id.price);
+        //check that prixTotal does not have more than 2 decimals
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        double roundedNumber = Double.parseDouble(decimalFormat.format(prixTotal));
+        prixTotalView.setText("Total : " + roundedNumber + "€");
 
         TextView label = findViewById(R.id.label);
         ProductList productList = null;
@@ -42,8 +50,13 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.button);
-        button.setEnabled(false);
+        button.setEnabled(true);
         button.setOnClickListener(v -> {
+            if (shopCart.isEmpty()){
+                //send a message to the user to tell him that he has to choose at least one product
+                Toast.makeText(this, "You have to choose at least one product", Toast.LENGTH_SHORT).show();
+                return;
+            }
             Intent intent1 = new Intent(this, CartActivity.class);
             ArrayList<Integer> productsId = ProductList.getProductsId(shopCart);
             intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
