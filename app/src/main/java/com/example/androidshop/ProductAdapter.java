@@ -49,7 +49,8 @@ public class ProductAdapter extends BaseAdapter {
         int resID = v.getResources().getIdentifier(imageName, "drawable", v.getContext().getPackageName());
         imageView.setImageResource(resID);
         TextView textView = v.findViewById(R.id.nom);
-        textView.setText(product.getNom());
+        //first letter in uppercase
+        textView.setText(product.getNom().substring(0, 1).toUpperCase() + product.getNom().substring(1));
         TextView textView2 = v.findViewById(R.id.prix);
         textView2.setText(product.getPrix() + "€");
         v.setOnClickListener(new View.OnClickListener() {

@@ -29,7 +29,7 @@ public class ProductList extends ArrayList<Product> implements Parcelable {
     public ProductList() throws IOException {
         StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(gfgPolicy);
-        URL url = new URL("https://api.jsonserve.com/wns4ld");
+        URL url = new URL("https://api.jsonserve.com/ENnysM");
         InputStream input = url.openStream();
         ObjectMapper mapper = new ObjectMapper();
         Product product[] = mapper.readValue(input, Product[].class);

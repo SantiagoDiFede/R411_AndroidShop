@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,19 +31,26 @@ public class InfoActivity extends AppCompatActivity {
         int imageId = getResources().getIdentifier(imageString, "drawable", getPackageName());
         imageView.setImageResource(imageId);
         TextView name = findViewById(R.id.textNom);
-        name.setText(product.getNom());
+        //first letter in uppercase
+        name.setText(product.getNom().substring(0, 1).toUpperCase() + product.getNom().substring(1));
         TextView price = findViewById(R.id.textPrix);
-        price.setText(String.valueOf(product.getPrix()));
+        price.setText("Prix: " + product.getPrix() +"€");
         TextView description = findViewById(R.id.textDescription);
         description.setText(product.getAbout());
         TextView stock = findViewById(R.id.textStock);
-        stock.setText(String.valueOf(product.getStock()));
+        stock.setText("Nombre en stock: " + product.getStock());
         TextView category = findViewById(R.id.textCatégorie);
         category.setText(product.getCategorie());
         TextView taille = findViewById(R.id.textTaille);
-        taille.setText(String.valueOf(product.getTaille()));
+        taille.setText("taille: " + product.getTaille() +"cm");
         TextView couleur = findViewById(R.id.textCouleur);
-        couleur.setText(product.getColor());
+        couleur.setText("couleur: " + product.getColor());
+        ImageButton buttonBack = findViewById(R.id.imageButton);
+        buttonBack.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, ShopActivity.class);
+            intent1.putExtra("shopCart", shopCart);
+            startActivity(intent1);
+        });
         Button button = findViewById(R.id.buyButton);
         button.setOnClickListener(v -> {
             Intent intent1 = new Intent(this, ShopActivity.class);
