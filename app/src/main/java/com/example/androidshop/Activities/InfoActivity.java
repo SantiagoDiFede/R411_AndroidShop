@@ -19,21 +19,27 @@ import java.util.ArrayList;
 
 public class InfoActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_activity);
+
+        // Récupère l'objet Product sélectionné depuis l'activité précédente
         Intent intent = getIntent();
         Product product = (Product) intent.getSerializableExtra("productInfo");
+
+        // Récupère la liste des produits présents dans le panier depuis l'activité précédente
         ArrayList<Product> shopCart = (ArrayList<Product>) intent.getSerializableExtra("shopCart");
+
+        // Affiche l'image du produit
         ImageView imageView = findViewById(R.id.image);
         int image = product.getPicture();
         String imageString = "bille" + image;
         int imageId = getResources().getIdentifier(imageString, "drawable", getPackageName());
         imageView.setImageResource(imageId);
+
+        // Affiche le nom, le prix, la description, le stock, la catégorie, la taille et la couleur du produit
         TextView name = findViewById(R.id.textNom);
-        //first letter in uppercase
         name.setText(product.getNom().substring(0, 1).toUpperCase() + product.getNom().substring(1));
         TextView price = findViewById(R.id.textPrix);
         price.setText("Prix: " + product.getPrix() +"€");
@@ -47,12 +53,16 @@ public class InfoActivity extends AppCompatActivity {
         taille.setText("taille: " + product.getTaille() +"cm");
         TextView couleur = findViewById(R.id.textCouleur);
         couleur.setText("couleur: " + product.getColor());
+
+        // Ajoute un bouton pour retourner à l'activité précédente (ShopActivity)
         ImageButton buttonBack = findViewById(R.id.imageButton);
         buttonBack.setOnClickListener(v -> {
             Intent intent1 = new Intent(this, ShopActivity.class);
             intent1.putExtra("shopCart", shopCart);
             startActivity(intent1);
         });
+
+        // Ajoute un bouton pour ajouter le produit au panier et retourner à l'activité précédente (ShopActivity)
         Button button = findViewById(R.id.buyButton);
         button.setOnClickListener(v -> {
             Intent intent1 = new Intent(this, ShopActivity.class);
@@ -61,10 +71,5 @@ public class InfoActivity extends AppCompatActivity {
             intent1.putExtra("shopCart", shopCart);
             startActivity(intent1);
         });
-
-
-
-
     }
 }
-

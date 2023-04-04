@@ -29,7 +29,7 @@ public class PopUpActivity extends Activity {
 
         popupLayout = findViewById(R.id.popup_layout);
 
-        // Start with the popup layout hidden
+        // Commence avec le popup layout caché
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(
                 ObjectAnimator.ofFloat(popupLayout, View.SCALE_X, 0f, 1f),

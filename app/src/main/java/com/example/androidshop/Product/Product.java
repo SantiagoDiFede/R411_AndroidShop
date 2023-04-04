@@ -10,14 +10,14 @@ import java.io.Serializable;
 
 public class Product implements Parcelable, Serializable {
 
-    private int id;
-    private String nom;
-    private String color;
-    private double taille;
-    private String categorie;
-    private double prix;
-    private int picture;
-    private String about;
+    private int id; // identifiant unique du produit
+    private String nom; // nom du produit
+    private String color; // couleur du produit
+    private double taille; // taille du produit
+    private String categorie; // catégorie du produit
+    private double prix; // prix du produit
+    private int picture; // ressource de l'image du produit
+    private String about; // description du produit
 
     public int getStock() {
         return stock;
@@ -27,9 +27,7 @@ public class Product implements Parcelable, Serializable {
         this.stock = stock;
     }
 
-    private int stock;
-
-
+    private int stock; // stock disponible du produit
 
     @JsonCreator
     public Product(@JsonProperty("id") int id,
@@ -52,11 +50,13 @@ public class Product implements Parcelable, Serializable {
         this.stock = stock;
     }
 
+    // Constructeur vide
+    public Product() {}
 
+    // Getters et setters pour les attributs de la classe
 
-
-
-
+    // Méthodes nécessaires pour l'interface Parcelable
+    // Elles permettent de passer un objet de type Product entre différentes activités de l'application
 
     protected Product(Parcel in) {
         id = in.readInt();
@@ -82,69 +82,10 @@ public class Product implements Parcelable, Serializable {
         }
     };
 
-    public int getId() {
-        return id;
-    }
+    // Getters et setters pour les attributs de la classe
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getTaille() {
-        return taille;
-    }
-
-    public void setTaille(double taille) {
-        this.taille = taille;
-    }
-
-    public String getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
-    }
-
-    public double getPrix() {
-        return prix;
-    }
-
-    public void setPrix(double prix) {
-        this.prix = prix;
-    }
-
-    public int getPicture() {
-        return picture;
-    }
-
-    public void setPicture(int picture) {
-        this.picture = picture;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public void setAbout(String about) {
-        this.about = about;
-    }
+    // Méthodes nécessaires pour l'interface Parcelable
+    // Elles permettent de passer un objet de type Product entre différentes activités de l'application
 
     @Override
     public int describeContents() {
