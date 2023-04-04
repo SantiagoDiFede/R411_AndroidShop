@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.androidshop.Email.UserEmail;
+import com.example.androidshop.R;
 
 public class PopUpActivity extends Activity {
 

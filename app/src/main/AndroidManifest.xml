@@ -12,17 +12,17 @@
         android:theme="@style/Theme.Shop"
         tools:targetApi="31">
 
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity android:name=".Activities.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShopActivity" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".CartActivity" />
-        <activity android:name=".PopUpActivity" />
+        <activity android:name=".Activities.ShopActivity" />
+        <activity android:name=".Activities.InfoActivity" />
+        <activity android:name=".Activities.CartActivity" />
+        <activity android:name=".Activities.PopUpActivity" />
     </application>
 
 </manifest>

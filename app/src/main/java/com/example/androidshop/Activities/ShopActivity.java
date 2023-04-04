@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidshop.ClickableActivity;
+import com.example.androidshop.Product.Product;
+import com.example.androidshop.Product.ProductAdapter;
+import com.example.androidshop.Product.ProductList;
+import com.example.androidshop.R;
+
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class ShopActivity extends AppCompatActivity implements ClickableActivity{
+public class ShopActivity extends AppCompatActivity implements ClickableActivity {
 
     ArrayList<Product> shopCart = new ArrayList<>();
 

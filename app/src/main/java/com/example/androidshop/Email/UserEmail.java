@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Email;
 
 public class UserEmail {
     private static UserEmail instance;

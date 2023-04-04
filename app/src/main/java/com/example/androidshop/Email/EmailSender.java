@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Email;
 
 import java.util.Properties;
 import javax.mail.Message;

@@ -1,4 +1,4 @@
-package com.example.androidshop;
+package com.example.androidshop.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,12 +9,20 @@ import android.widget.ListView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidshop.ClickableActivity;
+import com.example.androidshop.Email.EmailSender;
+import com.example.androidshop.Email.UserEmail;
+import com.example.androidshop.Product.Product;
+import com.example.androidshop.Product.ProductAdapter;
+import com.example.androidshop.Product.ProductList;
+import com.example.androidshop.R;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 
-public class CartActivity extends AppCompatActivity implements ClickableActivity{
+public class CartActivity extends AppCompatActivity implements ClickableActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
