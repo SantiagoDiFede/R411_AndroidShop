@@ -47,18 +47,29 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         ListView listView = findViewById(R.id.products_list);
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.buy_button);
+        ProductList finalProductList = productList;
         button.setOnClickListener(v -> {
             System.out.println(UserEmail.getInstance().getEmail());
             Intent intent2 = new Intent(this, PopUpActivity.class);
             EmailSender emailSender = new EmailSender();
             try {
-                emailSender.sendEmail(UserEmail.getInstance().getEmail(),"Your order has been received","Your order has been received");
+                //make a string of the products
+                String productsString = "";
+                for (int i = 0; i < products1.size()-1; i++) {
+                    productsString += products1.get(i).getCategorie() + " " + products1.get(i).getNom() + ", \n";}
+                productsString += products1.get(products1.size()-1).getCategorie() +" "+products1.get(products1.size()-1).getNom() + " pour un total de " + finalProductList.getTotalPrice() + "€";
+                emailSender.sendEmail(UserEmail.getInstance().getEmail(),"Confirmation de commande","Votre commande des produits suivant : \n" + productsString + " a bien été reçue et est en cours de préparation.");
             } catch (MessagingException e) {
                 throw new RuntimeException(e);
             }
 
 
             startActivity(intent2);
+        });
+        Button button2 = findViewById(R.id.back_button);
+        button2.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, ShopActivity.class);
+            startActivity(intent1);
         });
 
 
