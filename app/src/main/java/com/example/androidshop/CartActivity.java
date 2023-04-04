@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.mail.MessagingException;
+
 public class CartActivity extends AppCompatActivity implements ClickableActivity{
 
     @Override
@@ -19,7 +21,6 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
         Intent intent = getIntent();
-        String mail = intent.getStringExtra("mail");
         ArrayList<Integer> products = intent.getIntegerArrayListExtra("products");
         //make a list of products that have been chosen
         ArrayList<Product> products1 = new ArrayList<>();
@@ -39,10 +40,17 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         listView.setAdapter(adapter);
         Button button = findViewById(R.id.buy_button);
         button.setOnClickListener(v -> {
-            //make the pop up window appear
-            Intent intent1 = new Intent(this, PopUpActivity.class);
-            intent1.putExtra("mail", mail);
-            startActivity(intent1);
+            Intent intent1 = getIntent();
+            String mail = intent.getStringExtra("mailUser");
+            Intent intent2 = new Intent(this, PopUpActivity.class);
+            EmailSender sender = new EmailSender("your.TrouveTaBille@yahoo.com", "your.goated1234");
+            try {
+                sender.sendEmail("malrega60@gmail.com", "Confirmation", "Votre commande a bien été confirmé.");
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+
+            startActivity(intent2);
         });
 
 
@@ -55,8 +63,6 @@ public class CartActivity extends AppCompatActivity implements ClickableActivity
         }
 
         @Override
-        public Context getContext() {
-            return null;
-        }
+        public Context getContext() {return getApplicationContext();}
 
 }

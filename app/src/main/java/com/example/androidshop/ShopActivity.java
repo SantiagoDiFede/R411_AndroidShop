@@ -53,13 +53,13 @@ public class ShopActivity extends AppCompatActivity implements ClickableActivity
         button.setEnabled(true);
         button.setOnClickListener(v -> {
             if (shopCart.isEmpty()){
-                //send a message to the user to tell him that he has to choose at least one product
                 Toast.makeText(this, "You have to choose at least one product", Toast.LENGTH_SHORT).show();
                 return;
             }
             Intent intent1 = new Intent(this, CartActivity.class);
             ArrayList<Integer> productsId = ProductList.getProductsId(shopCart);
             intent1.putIntegerArrayListExtra("products", ProductList.getProductsId(shopCart));
+            intent1.putExtra("mailUser", mail);
             startActivity(intent1);
         });
         Button button1 = findViewById(R.id.button2);
